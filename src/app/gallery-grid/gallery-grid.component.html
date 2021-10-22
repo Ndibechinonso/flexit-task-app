@@ -1,0 +1,16 @@
+<app-categories></app-categories>
+<div class="loading" *ngIf="loading">
+  <div class="spinner">
+    <div class="mask">
+      <div class="maskedCircle"></div>
+    </div>
+  </div>
+</div>
+
+<div class="grid-container">
+  <ng-container *ngFor="let image of gridImages">
+    <div class="image-div" [style.background]="'url('+image.urls.thumb+')'">
+<!--   <img [src]="image.urls.thumb" alt="hi"/>-->
+    </div>
+  </ng-container>
+</div>

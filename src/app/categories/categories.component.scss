@@ -1,0 +1,21 @@
+
+
+.category-container{
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  background: #f6f5fc;
+  padding-bottom: 40px;
+  .category-div{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+
+  }
+}
