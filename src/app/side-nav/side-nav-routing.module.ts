@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { GalleryGridComponent} from "../gallery-grid/gallery-grid.component";
 import {SideNavComponent} from "./side-nav.component";
+import {OtherRouteComponent} from "../other-route/other-route.component";
 
 
 const routes: Routes = [
@@ -9,19 +10,9 @@ const routes: Routes = [
     path: '',
     component: SideNavComponent,
     children: [
-      { path: '', redirectTo: '', pathMatch: 'full' },
-      // {
-      //   path: 'home',
-      //   loadChildren: () =>
-      //     import('./approved/approved.module').then((m) => m.ApprovedModule),
-      // },
-      // {
-      //   path: 'pending',
-      //   loadChildren: () =>
-      //     import('./pending/pending.module').then((m) => m.PendingModule),
-      // },
-      // { path: 'categories', component: CategoriesComponent },
-      { path: '**', redirectTo: 'home' }, // Add 404 maybe
+      { path: '', redirectTo: '' },
+      { path: 'other', redirectTo: '' },
+      { path: '**', redirectTo: '' }, // Add 404 maybe
     ],
   },
 ];
