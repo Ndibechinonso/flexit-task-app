@@ -16,8 +16,14 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  getGalleryGridImages():  Observable<any> {
-    return this.http.get<any>(`https://api.unsplash.com/search/photos?client_id=LTNB5WMcNPir06RnJxoWG8GIAVN-TQhb6tfwzRNybjk&query=football&per_page=8`, httpOptions)
+  getGalleryGridImages(query?: any):  Observable<any> {
+    let params;
+    query ? params = {
+      query: `${query}`
+    } : params = {
+      query: 'life'
+    }
+    return this.http.get<any>(`https://api.unsplash.com/search/photos?client_id=LTNB5WMcNPir06RnJxoWG8GIAVN-TQhb6tfwzRNybjk`,  {params})
       .pipe(catchError((error) => this.handleError(error)));
   }
 

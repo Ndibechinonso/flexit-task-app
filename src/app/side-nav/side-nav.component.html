@@ -7,6 +7,21 @@
 <!--      <div class="square2"></div>-->
 <!--      <div class="square3"></div>-->
 <!--    </div>-->
+
+    <div class="brand-logo">
+    <div class="container">
+      <div class="cube">
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+      </div>
+    </div>
+      <h1 class="brand-name">bluecube</h1>
+    </div>
+
     <mat-nav-list>
       <a class="board-menu-link" mat-list-item href="#" routerLink="/" routerLinkActive="active">
         <span><i class="fas fa-home"></i></span><span>Home</span>
@@ -14,14 +29,14 @@
       <a  class="board-menu-link" mat-list-item href="#" routerLink="./other" routerLinkActive="active">
         <span><i class="fas fa-square"></i></span><span>Message</span>
       </a>
-<!--      <div class="" >-->
-<!--      SHARE-->
-<!--      </div>-->
+      <div class="share" >
+      SHARE
+      </div>
       <a  class="board-menu-link" mat-list-item href="#" routerLink="./other" routerLinkActive="active">
-        <mat-icon aria-label="ranking">ranking</mat-icon>Ranking
+        <span><i class="fas fa-grip-vertical"></i></span><span>Ranking</span>
       </a>
       <a  class="board-menu-link" mat-list-item href="#" routerLink="./other" routerLinkActive="active">
-        <mat-icon aria-label="challenge">challenge</mat-icon>Challenge
+        <span><i class="fas fa-award"></i></span><span>Challenge</span>
       </a>
       <a  class="board-menu-link" mat-list-item href="#" routerLink="./other" routerLinkActive="active">
         <span><i class="fas fa-holly-berry"></i></span><span>Party</span>
@@ -30,7 +45,7 @@
         <span><i class="fas fa-link"></i></span><span>Connect</span>
       </a>
       <a  class="board-menu-link" mat-list-item href="#" routerLink="./other" routerLinkActive="active">
-        <span><i class="fas fa-pied-piper-alt"></i></span><span>Parade</span>
+        <span><i class="fas fa-walking"></i></span><span>Parade</span>
       </a>
       <a  class="board-menu-link" mat-list-item href="#" routerLink="./other" routerLinkActive="active">
         <span><i class="fas fa-users"></i></span><span>Group</span>
@@ -45,16 +60,52 @@
       </button>
       <div class="toolbar-div">
         <div class="input-field">
-<!--          <form (submit)="fetchCategory(input.value)">-->
-          <input class="searchBar" #input/><i class="fas fa-search"></i> <app-button></app-button>
-<!--          </form>-->
+          <form (submit)="fetchCategory(input.value)" >
+          <input class="searchBar" [formControl]="input" placeholder="Find Something..."/><i class="fas fa-search"></i> <app-button></app-button>
+          </form>
         </div>
         <div class="right-toolbar">
-          <i class="fas fa-bell"></i>
-        <div class="profile-div"><img alt="prof-img" src="assets/prof.jfif"/>
+          <i class="fas fa-bell" (click)="showActivityModal()" ></i>
+        <div class="profile-div"><img alt="profile-imgage" src="assets/prof.jfif"/>
         <span>Abigail <i class="fas fa-chevron-down"></i> </span>
         </div>
         </div>
+      </div>
+      <div class="notification-modal" *ngIf="activityModal" (clickOutside)="onClickedOutside($event)" [delayClickOutsideInit]="true">
+        <div class="activity-div">
+          <img alt="profile-activity" src="assets/prof.jfif"/>
+          <div class="activity">
+            <p class="activity-text">Michael liked you!</p>
+            <p class="activity-time">About 20 mins ago</p>
+          </div>
+          <i class="fas fa-heart ash"></i>
+          <div>
+
+          </div>
+        </div>
+        <div class="activity-div">
+          <img alt="profile-activity" src="assets/prof.jfif"/>
+          <div class="activity">
+            <p class="activity-text">Jack liked you!</p>
+            <p class="activity-time">About 40 mins ago</p>
+          </div>
+          <i class="fas fa-heart"></i>
+          <div>
+
+        </div>
+        </div>
+<!--        <div class="activity-div">-->
+<!--          <img alt="profile-activity" src="assets/prof.jfif"/>-->
+<!--          <div class="activity">-->
+<!--            <p class="activity-text">Michael commented-->
+<!--              on your photo!</p>-->
+<!--            <p class="activity-time">About 56 mins ago</p>-->
+<!--          </div>-->
+<!--          <i class="fas fa-comment-alt"></i>-->
+<!--          <div>-->
+
+<!--          </div>-->
+<!--        </div>-->
       </div>
     </mat-toolbar>
     <!-- Add Content Here -->

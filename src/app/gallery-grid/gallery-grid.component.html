@@ -7,10 +7,18 @@
   </div>
 </div>
 
-<div class="grid-container">
+<div class="grid-container" *ngIf="gridImages && !loading">
   <ng-container *ngFor="let image of gridImages">
     <div class="image-div" [style.background]="'url('+image.urls.thumb+')'">
 <!--   <img [src]="image.urls.thumb" alt="hi"/>-->
+      <div class="user-details">
+      <p>{{image.userName}}</p>
+       <div class='location-div'><i  *ngIf="image.userLocation" class="fas fa-map-marker-alt"></i> <p>{{image.userLocation}}</p> </div>
+      </div>
     </div>
   </ng-container>
+</div>
+
+<div class='empty-grid' *ngIf="!gridImages && !loading">
+  Sorry, no items were found matching your search keyword
 </div>

@@ -3,12 +3,40 @@
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   grid-template-rows: auto;
   gap: 20px;
+  padding: 0 30px 30px 30px;
   //grid-template-columns: 500px 500px 500px 500px;
 .image-div{
   background-repeat: no-repeat !important;
   background-size:100% 100% !important;
   height: 250px;
   border-radius: 10px;
+  position: relative;
+  .user-details{
+    color: #ffffff;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    p:nth-of-type(1){
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+    .location-div{
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      align-content: center;
+      align-items: center;
+      p{
+        margin-bottom: 0;
+        font-size: 12px;
+        font-weight: 400;
+      }
+      .fa-map-marker-alt{
+        font-size: 12px;
+      }
+    }
+  }
 }
 }
 
@@ -50,4 +78,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.empty-grid{
+  text-align: center;
+  margin-top: 40px;
 }

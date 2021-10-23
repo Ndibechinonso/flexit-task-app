@@ -20,4 +20,10 @@ export interface GridImageTemplate {
   urls: any;
   user: any;
   width: number;
+  userName?: string;
+  userLocation?: string;
+}
+
+export interface serachPayload  {
+  query: string
 }
