@@ -10,7 +10,7 @@ const routes: Routes = [
   //   loadChildren: () =>
   //     import('./side-nav/side-nav-routing.module').then((m) => m.SectionRoutingModule),
   // },
-  { path: '', component: GalleryGridComponent },
+  { path: 'home', component: GalleryGridComponent },
  ];
 
 @NgModule({
